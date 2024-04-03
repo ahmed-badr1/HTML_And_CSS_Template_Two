@@ -1,0 +1,58 @@
+@use "../abstracts/index" as *;
+
+/* Start Variables */
+:root {
+  --main-color: #{$main-color};
+  --transparent-color: #{$transparent-color};
+  --sub-color: #{$sub-color};
+  --section-padding: #{$section-padding};
+  --main-line-height: #{$main-line-height};
+  --main-transition-duration: #{$main-transition-duration};
+}
+
+/* Start Gobal Rules */
+*,
+*::before,
+*::after {
+  @include prefixer(box-sizing, border-box, webkit moz);
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  @include breakpoints(small) {
+    font-size: 15px;
+  }
+  @include breakpoints(medium) {
+    font-size: 16px;
+  }
+  @include breakpoints(large) {
+    font-size: 18px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+video {
+  width: 100%;
+}

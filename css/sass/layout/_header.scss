@@ -1,0 +1,105 @@
+@use "../abstracts/index" as *;
+
+/* Start Header*/
+
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  .container {
+    @include center-between;
+    position: relative;
+    min-height: 97px;
+    &::after {
+      content: "";
+      position: absolute;
+      border-bottom: 1px solid #a2a2a2;
+      width: calc(100% - 10px);
+      height: 1px;
+      bottom: 0;
+      @include breakpoints(small) {
+        width: calc(100% - 30px);
+      }
+    }
+  }
+
+  .logo img {
+    height: 30px;
+    @include breakpoints(small) {
+      height: 40px;
+    }
+  }
+
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    ul {
+      display: none;
+      @include breakpoints(medium) {
+        display: flex;
+      }
+    }
+    .toggle-menu {
+      position: relative;
+      color: white;
+      font-size: 1.57em;
+      @include breakpoints(medium) {
+        display: none;
+      }
+      &:hover + ul {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 100%;
+        left: 5px;
+        width: calc(100% - 10px);
+        background-color: rgba(0, 0, 0, 0.5);
+        @include breakpoints(small) {
+          left: 15px;
+          width: calc(100% - 30px);
+        }
+      }
+    }
+    li a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      font-size: 18px;
+      transition: var(--main-transition-duration);
+      @include breakpoints(medium) {
+        padding: {
+          top: 40px;
+          bottom: 40px;
+        };
+        font-size: 14px;
+      }
+      &:hover,
+      &.active {
+        color: var(--main-color);
+        border-bottom: 1px solid var(--main-color);
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+
+  .container .form {
+    position: relative;
+    height: 30px;
+    width: 40px;
+    border-left: 1px solid white;
+    @include center-end;
+    margin-left: 30px;
+    @include breakpoints(medium) {
+      margin-left: 50px;
+    }
+    i {
+      color: white;
+      font-size: 1.4em;
+    }
+  }
+}

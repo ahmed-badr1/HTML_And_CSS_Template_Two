@@ -1,0 +1,88 @@
+@use "../abstracts/index" as *;
+
+/* Start Pricing */
+.pricing {
+  padding: var(--section-padding) 0;
+  .container {
+    padding: 0 10px;
+  }
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 50px 50px;
+  }
+  .plan {
+    text-align: center;
+    background-color: #fcfcfc;
+    border-top: 1px solid var(--main-color);
+    .head {
+      padding: 40px 20px;
+      h3 {
+        font-weight: normal;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      span {
+        font-weight: bold;
+        font-size: 60px;
+        &::before {
+          content: "$";
+          font-size: 25px;
+          position: relative;
+          top: -40px;
+          left: -10px;
+          font-weight: normal;
+        }
+        &::after {
+          content: "/Mo";
+          font-size: 25px;
+          position: relative;
+          right: -10px;
+          font-weight: normal;
+        }
+      }
+    }
+    ul {
+      border-top: 1px solid var(--main-color);
+      border-bottom: 1px solid var(--main-color);
+      li {
+        padding: 20px;
+        position: relative;
+        &:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          width: 140px;
+          height: 1px;
+          background-color: var(--main-color);
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    .foot {
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 1px solid var(--main-color);
+        width: fit-content;
+        margin: 30px auto;
+      }
+    }
+  }
+  .contact-text {
+    text-align: center;
+    margin: 50px auto 20px;
+    font-size: 1.4285em;
+  }
+  .contact-link {
+    display: block;
+    background-color: var(--main-color);
+    color: white;
+    width: fit-content;
+    padding: 15px 30px;
+    margin: 20px auto;
+    text-decoration: none;
+  }
+}

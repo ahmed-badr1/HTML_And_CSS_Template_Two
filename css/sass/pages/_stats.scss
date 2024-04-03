@@ -1,0 +1,45 @@
+@use "../abstracts/index" as *;
+
+/* Start Stats */
+.stats {
+  position: relative;
+  padding: var(--section-padding) 0;
+  background-image: url("../images/stats.png");
+  background-size: cover;
+  text-align: center;
+  &::before {
+    content: "";
+    @include overlay(black, 0.6);
+  }
+  .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .box {
+    background-color: var(--transparent-color);
+    color: white;
+    padding: 25px;
+    flex-basis: 100%;
+    @include breakpoints(medium) {
+      padding: 50px;
+      flex-basis: 50%;
+    }
+    @include breakpoints(large) {
+      flex-basis: 25%;
+    }
+    i {
+      background-color: black;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      @include center-flex;
+      margin: 0 auto 30px;
+    }
+    .number {
+      font-weight: bold;
+      font-size: 2.75em;
+      margin-bottom: 20px;
+    }
+  }
+}

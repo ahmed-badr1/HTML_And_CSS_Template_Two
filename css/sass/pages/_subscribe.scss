@@ -1,0 +1,80 @@
+@use "../abstracts/index" as *;
+
+/* Start Subscribe */
+.subscribe {
+  position: relative;
+  padding: var(--section-padding) 0;
+  background-image: url("../images/subscribe.jpg");
+  background-size: cover;
+  color: white;
+  &::before {
+    content: "";
+    @include overlay(black, 0.5);
+  }
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include breakpoints(large) {
+      flex-direction: row;
+    }
+  }
+  form {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    border: 1px solid white;
+    @include breakpoints(large) {
+      min-width: 500px;
+    }
+    i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 5px;
+      @include breakpoints(small) {
+        margin-left: 20px;
+      }
+    }
+    input[type="email"] {
+      padding-left: 40px;
+      background: none;
+      caret-color: var(--main-color);
+      line-height: 1.2;
+      color: white;
+      width: calc(100% - 100px);
+      border: none;
+      outline: none;
+      @include breakpoints(small) {
+        padding: 20px 20px 20px 60px;
+        line-height: calc(var(--main-line-height) - 0.2);
+        width: calc(100% - 130px);
+      }
+    }
+    input[type="email"]::placeholder {
+      color: white;
+    }
+    input[type="submit"] {
+      background-color: var(--main-color);
+      color: white;
+      text-transform: uppercase;
+      width: 100px;
+      border: none;
+      cursor: pointer;
+      @include breakpoints(small) {
+        width: 130px;
+      }
+    }
+  }
+  .container p {
+    margin: 40px auto 0;
+    text-align: center;
+    line-height: var(--main-line-height);
+    @include breakpoints(large) {
+      margin: 0 0 0 50px;
+      text-align: left;
+    }
+  }
+}

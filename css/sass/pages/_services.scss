@@ -1,0 +1,35 @@
+@use "../abstracts/index" as *;
+
+/* Start Services */
+.services {
+  padding: var(--section-padding) 0;
+  @include breakpoints(medium) {
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      gap: 60px 150px;
+    }
+  }
+  .srv-box {
+    display: flex;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    i {
+      flex: 0 0 80px;
+    }
+    .text {
+      h3 {
+        color: var(--main-color);
+        margin-bottom: 20px;
+      }
+      p {
+        color: var(--sub-color);
+        line-height: calc(var(--main-line-height) - 0.2);
+        font-size: 1em;
+      }
+    }
+  }
+}

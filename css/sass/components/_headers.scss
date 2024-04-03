@@ -1,0 +1,42 @@
+@use "../abstracts/index" as *;
+
+/* Start Components */
+.main-heading {
+  text-align: center;
+  h2 {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 80px;
+    &::before{
+      content: "";
+      position: absolute;
+      background-color: #333;
+      width: 120px;
+      height: 2px;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid #333;
+      background-color: white;
+      width: 15px;
+      height: 15px;
+      bottom: -29px;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+    + p {
+      width: 100%;
+      max-width: 550px;
+      color: var(--sub-color);
+      line-height: var(--main-line-height);
+      margin: 0 auto 100px;
+    }
+  }
+}

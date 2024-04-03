@@ -1,0 +1,19 @@
+@use "../abstracts/index" as *;
+
+/* Start About */
+.about {
+  padding-top: var(--section-padding);
+  text-align: center;
+  overflow: hidden;
+  img{
+    position: relative;
+    bottom: -60px;
+    margin-top: -60px;
+    margin-left: -20px;
+    max-width: 100%;
+    @include breakpoints(medium) {
+      bottom: -120px;
+      margin-top: -120px;
+    }
+  }
+}

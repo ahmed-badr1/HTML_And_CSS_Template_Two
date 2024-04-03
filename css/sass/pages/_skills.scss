@@ -1,0 +1,120 @@
+@use "../abstracts/index" as *;
+$-prog-width: (2: 90%, 3: 85%, 4: 80%, 5: 90%);
+/* Start Skills */
+.our-skills {
+  padding: var(--section-padding) 0;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > div {
+      @include breakpoints(large) {
+        flex-basis: 45%;
+      }
+    }
+    .mian-section-heading {
+      text-align: center;
+      margin-bottom: 60px;
+      p {
+        color: var(--sub-color);
+        line-height: var(--main-line-height);
+      }
+    }
+  }
+  .testimonials {
+    .content {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-direction: column;
+      text-align: center;
+      @include breakpoints(medium) {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+    img {
+      width: 100px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      @include breakpoints(medium) {
+        margin: 0 50px 0 0;
+      }
+    }
+    .text {
+      line-height: calc(var(--main-line-height) - 0.2);
+      border-bottom: 1px solid #ccc;
+      p {
+        color: var(--sub-color);
+        text-align: right;
+        margin-bottom: 10px;
+        font-size: 1em;
+      }
+    }
+    .bullets {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      li {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 1px solid #aaa;
+        margin-right: 10px;
+        &.active {
+          background-color: var(--main-color);
+          border: 1px solid var(--transparent-color);
+        }
+      }
+    }
+  }
+
+  .skills {
+    .prog-holder {
+      margin-bottom: 40px;
+      h4 {
+        margin-bottom: 15px;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+      .prog {
+        height: 30px;
+        background-color: #ddd;
+        border-radius: 6px;
+        span {
+          display: block;
+          background-color: var(--main-color);
+          height: 100%;
+          position: relative;
+          border-radius: 6px;
+          &::before {
+            content: attr(data-progress);
+            position: absolute;
+            background-color: black;
+            color: white;
+            width: 40px;
+            padding: 4px 0;
+            top: -40px;
+            right: -20px;
+            border-radius: 5px;
+            text-align: center;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            border: 8px solid transparent;
+            border-top-color: black;
+            top: -15px;
+            right: -8px;
+          }
+        }
+      }
+      @each $prog, $width in $-prog-width {
+        &:nth-child(#{$prog}) .prog span {
+          width: $width;
+        }
+      }
+    }
+  }
+}

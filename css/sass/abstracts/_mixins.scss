@@ -1,0 +1,49 @@
+@mixin breakpoints($point) {
+  @if $point == small {
+    @media (min-width: 576px) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == large {
+    @media (min-width: 992px) { @content; }
+  }
+  @else if $point == x-large {
+    @media (min-width: 1200px) { @content; }
+  }
+};
+
+
+@mixin prefixer($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: #{$value};
+  }
+  #{$property}: #{$value};
+}
+
+@mixin overlay($color, $opacity) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color, $opacity)
+}
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin center-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

@@ -1,0 +1,94 @@
+@use "../abstracts/index" as *;
+
+/* Start Landing */
+
+.landing {
+  position: relative;
+  min-height: 100vh;
+  background-color: #1f2023;
+  background-image: url("../images/landing.jpg");
+  background-size: cover;
+  background-position: 65%;
+  .overlay {
+    @include overlay(black, 0.6);
+  }
+  .text {
+    position: absolute;
+    background-color: var(--transparent-color);
+    color: white;
+    width: 100%;
+    padding: 5px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    @include center-flex;
+    @include breakpoints(medium) {
+      width: 70%;
+      padding: 50px;
+      border-right: 15px solid var(--transparent-color);
+      @include center-end;
+    }
+    @include breakpoints(large) {
+      width: 65%;
+    }
+    .content {
+      max-width: 420px;
+      @include breakpoints(large) {
+        max-width: 470px;
+      }
+    }
+  }
+  .content {
+    h2 {
+      font-size: 1.3em;
+      font-weight: normal;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    p {
+      font-size: 1em;
+      line-height: var(--main-line-height);
+    }
+  }
+  .right-angle,
+  .left-angle {
+    position: absolute;
+    color: #ddd;
+    top: 75%;
+    transform: translateY(-50%);
+    @include breakpoints(small) {
+      top: 50%;
+    }
+  }
+  .left-angle {
+    left: 15px;
+    @include breakpoints(medium) {
+      left: 30px;
+    }
+  }
+  .right-angle {
+    right: 15px;
+    @include breakpoints(medium) {
+      right: 30px;
+    }
+  }
+
+  .bullets {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include center-between;
+    gap: 10px;
+    li {
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      &.active {
+        background-color: var(--main-color);
+        border-color: var(--transparent-color);
+      }
+    }
+  }
+}

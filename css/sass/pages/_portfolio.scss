@@ -1,0 +1,68 @@
+@use "../abstracts/index" as *;
+
+/* Start Portfolio*/
+.portfolio {
+  padding: var(--section-padding) 0;
+  .shuffle {
+    @include center-flex;
+    li {
+      display: block;
+      padding: 10px;
+      &.active {
+        background-color: var(--main-color);
+        color: white;
+      }
+    }
+  }
+  .imgs-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    .box {
+      overflow: hidden;
+      position: relative;
+      @include breakpoints(medium) {
+        flex-basis: 50%;
+      }
+      @include breakpoints(x-large) {
+        flex-basis: 25%;
+      }
+      img {
+        transition: var(--main-transition-duration);
+      }
+      &:hover img {
+        transform: rotate(3deg) scale(1.1);
+      }
+      .caption {
+        position: absolute;
+        padding: 20px;
+        background-color: white;
+        width: 100%;
+        left: 0;
+        bottom: -100%;
+        border-bottom: 1px solid #eee;
+        transition: var(--main-transition-duration);
+      }
+      &:hover .caption {
+        bottom: 0;
+      }
+    }
+    h4 {
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+    p {
+      color: var(--main-color);
+    }
+  }
+  .more {
+    display: block;
+    background-color: var(--main-color);
+    color: white;
+    width: fit-content;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px  20px;
+    margin: 30px auto;
+  }
+}

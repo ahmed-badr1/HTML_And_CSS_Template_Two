@@ -1,0 +1,22 @@
+@use "../abstracts/index" as *;
+
+/* Start Grid System */
+.container {
+  width: 100%;
+  padding: 0 5px;
+  margin: 0 auto;
+
+  @include breakpoints(small) {
+    max-width: 540px;
+    padding: 0 15px;
+  }
+  @include breakpoints(medium) {
+    max-width: 720px;
+  }
+  @include breakpoints(large) {
+    max-width: 960px;
+  }
+  @include breakpoints(x-large) {
+    max-width: 1140px;
+  }
+}

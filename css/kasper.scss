@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// import global Rules
+@use "sass/base/base";
+
+// import grid system
+@use "sass/layout/grid";
+
+// import all components
+@use "sass/components/components-index";
+
+// import Main Header
+@use "sass/layout/header";
+
+// import Main Content
+@use "sass/pages/pages-index";
+
+// Import Main Footer
+@use "sass/layout/footer";

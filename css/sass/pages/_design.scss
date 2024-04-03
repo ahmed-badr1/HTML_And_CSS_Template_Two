@@ -1,0 +1,57 @@
+@use "../abstracts/index" as *;
+
+/* Start Design */
+.design {
+  position: relative;
+  padding: var(--section-padding) 0;
+  background-image: url("../images/design-features.jpg");
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
+  @include breakpoints(medium) {
+    flex-direction: row;
+    align-items: center;
+    height: 600px;
+  }
+  &::before {
+    content: "";
+    @include overlay(black, 0.6);
+  }
+  .text,
+  .image {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+  }
+  .image {
+    text-align: center;
+    padding: 5px;
+    img {
+      position: relative;
+      bottom: -150px;
+    }
+  }
+  .text {
+    color: white;
+    padding: 5px;
+    margin-bottom: -50px;
+    background-color: var(--transparent-color);
+    h2 {
+      font-weight: normal;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    ul li {
+      padding: 15px 0;
+      &::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f108";
+        font-weight: 900;
+        margin-right: 20px;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+}
