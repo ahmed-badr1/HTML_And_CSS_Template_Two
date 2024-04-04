@@ -58,7 +58,7 @@
         text-transform: uppercase;
         font-size: 1.175em;
       }
-      .span.phone {
+      span.phone {
         display: block;
         color: var(--sub-color);
         margin-bottom: 10px;
@@ -73,7 +73,7 @@
         address {
           color: var(--sub-color);
           line-height: var(--main-line-height);
-          font-size: 0.975em;
+          font-size: 0.85714em;
           font-weight: 500;
         }
       }

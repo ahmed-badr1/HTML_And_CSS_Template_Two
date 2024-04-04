@@ -64,7 +64,7 @@ video {
 /* Start Grid System */
 .container {
   width: 100%;
-  padding: 0 5px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 @media (min-width: 576px) {
@@ -426,7 +426,7 @@ header .container .form i {
 }
 .design .image {
   text-align: center;
-  padding: 5px;
+  padding: 10px;
 }
 .design .image img {
   position: relative;
@@ -434,7 +434,7 @@ header .container .form i {
 }
 .design .text {
   color: white;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: -50px;
   background-color: var(--transparent-color);
 }
@@ -966,7 +966,7 @@ header .container .form i {
   }
 }
 .subscribe form input[type=email] {
-  padding-left: 40px;
+  padding: 12px 12px 12px 40px;
   background: none;
   caret-color: var(--main-color);
   line-height: 1.2;
@@ -1081,7 +1081,7 @@ header .container .form i {
   text-transform: uppercase;
   font-size: 1.175em;
 }
-.contact .content .info .span.phone {
+.contact .content .info span.phone {
   display: block;
   color: var(--sub-color);
   margin-bottom: 10px;
@@ -1097,7 +1097,7 @@ header .container .form i {
 .contact .content .info .address address {
   color: var(--sub-color);
   line-height: var(--main-line-height);
-  font-size: 0.975em;
+  font-size: 0.85714em;
   font-weight: 500;
 }
 

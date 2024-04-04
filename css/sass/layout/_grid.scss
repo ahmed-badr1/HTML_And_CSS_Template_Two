@@ -3,7 +3,7 @@
 /* Start Grid System */
 .container {
   width: 100%;
-  padding: 0 5px;
+  padding: 0 10px;
   margin: 0 auto;
 
   @include breakpoints(small) {
